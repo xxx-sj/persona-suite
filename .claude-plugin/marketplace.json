@@ -1,0 +1,13 @@
+{
+  "name": "persona-suite",
+  "owner": {
+    "name": "sangjin"
+  },
+  "plugins": [
+    {
+      "name": "persona-suite",
+      "source": "./",
+      "description": "개발 라이프사이클 단계별 시니어 페르소나 티키타카 스킬 모음 (현재: defining-requirements)."
+    }
+  ]
+}
