@@ -12,7 +12,7 @@
 | `designing-data-model` | 상세 스키마/인덱스 설계 ([REV][DBA][DATA][SRE][SEC]) | ✅ |
 | `designing-code` | 모듈/코드 설계 | 예정 |
 
-설계 근거는 [`DESIGN.md`](./DESIGN.md).
+설계 근거는 [`DESIGN.md`](./DESIGN.md). 전체 개발 라이프사이클 + 각 스킬 위치는 [`LIFECYCLE.md`](./LIFECYCLE.md).
 
 ## 설치 (각 컴퓨터에서)
 
