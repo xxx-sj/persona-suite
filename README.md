@@ -15,6 +15,17 @@
 
 설계 근거는 [`DESIGN.md`](./DESIGN.md). 전체 개발 라이프사이클 + 각 스킬 위치는 [`LIFECYCLE.md`](./LIFECYCLE.md).
 
+## 호출 — 자연어 자동 / 슬래시 커맨드(명시·결정적)
+
+각 스킬은 자연어 키워드로 자동 표면화되지만, **결정적으로 특정 단계만** 부르려면 슬래시 커맨드 (`commands/`). 각 커맨드는 *자기 단계만* 실행하고 **다음 단계를 자동 호출하지 않는다** — 다음은 `LIFECYCLE.md` 안내 따라 직접 호출:
+
+| 커맨드 | 호출 스킬 | 단계 |
+|---|---|---|
+| `/persona-suite:define-requirements` | `defining-requirements` | 1~3 요구사항·기능정의·기술설계(고수준) |
+| `/persona-suite:design-data-model` | `designing-data-model` | 4 데이터모델 |
+| `/persona-suite:design-code` | `designing-code` | 5 코드설계 |
+| `/persona-suite:validate-test-lists` | `validating-test-lists` | 6b 테스트리스트업 |
+
 ## 설치 (각 컴퓨터에서)
 
 GitHub 등에 이 repo를 push 한 뒤:
