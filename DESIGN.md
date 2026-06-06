@@ -51,8 +51,8 @@
 
 ## 5. 후속 스킬 메모 (정식 설계는 각자 사이클)
 
-- **#2 `designing-data-model`**: 상세 스키마/인덱스. 프로젝트에 이미 DB 설계 페르소나가 있으면 정체성이 겹침 → 복사 ❌, "참조" 또는 그 시스템에 "신규 설계 모드" 추가가 유력. 별도 skill이 아닐 수도.
-- **#3 `designing-code`**: 모듈·코드 설계. 구현 계획 스킬과 경계(설계 vs 계획) 정리 필요. #1 사용 경험 후 확정.
+- **#2 `designing-data-model`** ✅ 빌드됨: 상세 스키마/인덱스. 자체 페르소나 [REV][DBA][DATA][SRE][SEC]로 **portable** (vtyle DB 페르소나 정의를 genericize). 프로젝트에 더 풍부한 DB 도구 있으면 프로필 `handoffs.db_design`로 *선택 참조*(통째 deferral ❌ — 다른 프로젝트서 빔). vtyle 스키마 *내용*(domains/resume-plan)은 vtyle에 남김.
+- **#3 `designing-code`** (예정): 모듈·코드 *설계* — 자체 [아키텍트][시니어] 페르소나. writing-plans(=구현 *계획*, superpowers)와 다른 단계, 거기 하드 의존 ❌. #1·#2 경험 후 확정.
 
 ## 6. 한계 / 트레이드오프
 

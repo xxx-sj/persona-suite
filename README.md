@@ -9,7 +9,7 @@
 | skill | 단계 | 상태 |
 |---|---|---|
 | `defining-requirements` | 요구사항 정의 (①요구사항→②기능정의→③기술설계) | ✅ |
-| `designing-data-model` | 상세 스키마/인덱스 설계 | 예정 |
+| `designing-data-model` | 상세 스키마/인덱스 설계 ([REV][DBA][DATA][SRE][SEC]) | ✅ |
 | `designing-code` | 모듈/코드 설계 | 예정 |
 
 설계 근거는 [`DESIGN.md`](./DESIGN.md).
