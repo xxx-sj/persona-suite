@@ -10,7 +10,8 @@
 |---|---|---|
 | `defining-requirements` | 요구사항 정의 (①요구사항→②기능정의→③기술설계) | ✅ |
 | `designing-data-model` | 상세 스키마/인덱스 설계 ([REV][DBA][DATA][SRE][SEC]) | ✅ |
-| `designing-code` | 모듈/코드 설계 | 예정 |
+| `designing-code` | 모듈/코드 설계 ([ARCH][REV][SEC]) | ✅ v1·미검증 |
+| `validating-test-lists` | 테스트 리스트업 (빠진/불필요/엣지 검증) | ✅ |
 
 설계 근거는 [`DESIGN.md`](./DESIGN.md). 전체 개발 라이프사이클 + 각 스킬 위치는 [`LIFECYCLE.md`](./LIFECYCLE.md).
 

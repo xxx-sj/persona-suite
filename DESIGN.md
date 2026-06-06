@@ -52,7 +52,8 @@
 ## 5. 후속 스킬 메모 (정식 설계는 각자 사이클)
 
 - **#2 `designing-data-model`** ✅ 빌드됨: 상세 스키마/인덱스. 자체 페르소나 [REV][DBA][DATA][SRE][SEC]로 **portable** (vtyle DB 페르소나 정의를 genericize). 프로젝트에 더 풍부한 DB 도구 있으면 프로필 `handoffs.db_design`로 *선택 참조*(통째 deferral ❌ — 다른 프로젝트서 빔). vtyle 스키마 *내용*(domains/resume-plan)은 vtyle에 남김.
-- **#3 `designing-code`** (예정): 모듈·코드 *설계* — 자체 [아키텍트][시니어] 페르소나. writing-plans(=구현 *계획*, superpowers)와 다른 단계, 거기 하드 의존 ❌. #1·#2 경험 후 확정.
+- **#3 `designing-code`** ✅ **v1(미검증)**: 모듈·코드 설계 — 자체 `[ARCH][REV][SEC]` 페르소나. genericize 원본 없이 맨땅 저술 → *첫 코드설계 무거운 피처서 dogfood로 검증·수정* 예정(build-now-refine-later). writing-plans(구현 *계획*)와 다른 단계.
+- **`validating-test-lists`** ✅ 이동됨: 테스트 리스트업(6b) — 기존 standalone 개인 스킬을 플러그인으로 이동(portable). suite 정체성이 "설계 핑퐁"→"비-superpowers 라이프사이클 도구 모음"으로 넓어짐.
 
 ## 6. 한계 / 트레이드오프
 
