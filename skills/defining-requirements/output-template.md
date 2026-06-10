@@ -1,6 +1,6 @@
 # 요구사항 문서 출력 양식
 
-`defining-requirements` 산출물. 프로필 `conventions.output_path` 에 `<도메인>/<피처>.md` 로 저장. 해당 섹션이 비면 채워졌는지 종료 완성도 패스에서 확인한다. 피처에 해당 없으면 "해당 없음"으로 명시(빈칸 방치 금지).
+`defining-requirements` 산출물. 프로필 `conventions.output_path` 에 `<도메인>/<피처>.md` 로 저장. 해당 섹션이 비면 채워졌는지 종료 완성도 패스에서 확인한다. 피처에 해당 없으면 "해당 없음"으로 명시(빈칸 방치 금지). 완성 깊이의 기준은 [`examples/defining-requirements-example.md`](../../examples/defining-requirements-example.md) 참고.
 
 ---
 
@@ -52,4 +52,4 @@
 ## 9. 핸드오프 메모
 - DB 상세 설계: <handoffs.db_design 으로 / 해당 없음>
 - 테스트 리스트: <handoffs.test_list 으로>
-- 구현 계획: writing-plans 로
+- 구현 계획: <handoffs.plan 으로>

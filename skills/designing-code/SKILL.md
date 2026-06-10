@@ -12,12 +12,10 @@ description: 요구사항·데이터모델이 정해진 피처의 모듈/코드 
 
 **right-size 경고**: 코드 설계는 *과설계가 가장 흔한* 단계. 기존 모듈 수정 위주의 가벼운 피처면 이 스킬을 **건너뛰고** 바로 구현 계획으로 가라 (예: 메서드/필드 추가). 새 모듈·서브시스템·복잡한 협업이 있을 때만 돈다.
 
-**순서 경고**: 이 스킬은 `designing-data-model` *다음*, `writing-plans`(작업분해) ***전***에 돈다. **이미 구현 계획(plan)이 있으면** plan의 file-structure와 *중복* — 그땐 designing-code를 생략하거나 plan 교차검증 용도로만. (dogfood 발견: plan 뒤에 돌리면 중복)
+**순서 경고**: 이 스킬은 `designing-data-model` *다음*, 작업분해(`handoffs.plan`, 예: writing-plans) ***전***에 돈다. **이미 구현 계획(plan)이 있으면** plan의 file-structure와 *중복* — 그땐 designing-code를 생략하거나 plan 교차검증 용도로만. (dogfood 발견: plan 뒤에 돌리면 중복)
 
-## 공유 원칙 (suite 공통)
-- **피드백 모드(개발 단계)**: 사용자가 제안 → 페르소나가 빠진 곳·약한 곳 지적 + 검증 + *도출 초안* 제안. **결정만 사용자 커밋.** 순수 Socratic 아님.
-- **개념은 본질에서 도출**. **관심사는 적되 솔루션 처방 X** — 추상화는 *2회 이상 반복될 때만*(YAGNI). capacity 규모서 최단순.
-- **챕터 단위 자기 점검 루프**. 확정은 "**확정**"("락" 금지).
+## 공유 원칙 로드 (suite 공통)
+플러그인 root [`PRINCIPLES.md`](../../PRINCIPLES.md) 를 읽어 적용한다 — 피드백 모드(결정만 사용자)·개념 본질 도출·right-size·챕터 자기점검(+트리거 점검)·specifics 가정 금지·용어. 이 스킬 변형: **결정 = 구조·패턴 선택**, right-size = **추상화는 2회 이상 반복 시만(YAGNI)**.
 
 ## 시작 전: 입력 + 프로필
 1. 입력 = **요구사항(+데이터모델) 문서**. 없으면 → defining-requirements/designing-data-model 권유.

@@ -13,7 +13,7 @@
 | `designing-code` | 모듈/코드 설계 ([ARCH][REV][SEC]) | ✅ v1·미검증 |
 | `validating-test-lists` | 테스트 리스트업 (빠진/불필요/엣지 검증) | ✅ |
 
-설계 근거는 [`DESIGN.md`](./DESIGN.md). 전체 개발 라이프사이클 + 각 스킬 위치는 [`LIFECYCLE.md`](./LIFECYCLE.md).
+설계 근거는 [`DESIGN.md`](./DESIGN.md) (검증 이력은 그 안 dogfood 로그). 전체 개발 라이프사이클 + 각 스킬 위치는 [`LIFECYCLE.md`](./LIFECYCLE.md). 페르소나 스킬 공통 원칙(단일 출처)은 [`PRINCIPLES.md`](./PRINCIPLES.md). 완성 산출물 예시는 [`examples/defining-requirements-example.md`](./examples/defining-requirements-example.md).
 
 ## 호출 — 자연어 자동 / 슬래시 커맨드(명시·결정적)
 
