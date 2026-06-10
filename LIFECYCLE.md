@@ -14,14 +14,16 @@
 | 6b | 테스트 리스트업 (빠진/불필요/**엣지** 검증) | `validating-test-lists` | ✅ suite |
 | 7 | 구현 | test-driven-development | superpowers |
 | 8 | 테스트 진행 (단위·통합) | (TDD) | superpowers |
+| 8.5 | 프로덕션 리스크 감사 (독립 서브에이전트 판정표) | `auditing-production-risks` | ✅ suite (v1 — 미검증) |
 | 9 | PR·코드리뷰·CI | code-review | superpowers |
 | 10 | e2e (staging) | — | 프로젝트 |
+| 10.5 | 부하 검증 (조건부 — 요구사항 §5 부하테스트 게이트가 '필요'일 때) | — | 프로젝트 |
 | 11 | 배포 (expand-contract·flag) | — | 프로젝트 |
 | 12 | 모니터링 | — | 프로젝트 |
 | 13 | 롤백 / 회고+정리 | — | 프로젝트 |
 
 ## suite 경계 (누가 뭘 맡나)
-- **persona-suite = 설계(1~5, 페르소나 핑퐁) + 테스트 리스트업(6b, `validating-test-lists` 검증).** = superpowers 아닌 라이프사이클 도구 모음.
+- **persona-suite = 설계(1~5, 페르소나 핑퐁) + 테스트 리스트업(6b) + 프로덕션 리스크 감사(8.5, 판정표).** = superpowers 아닌 라이프사이클 도구 모음.
 - **superpowers = 6a 작업분해(writing-plans) · 7~9 구현/테스트/리뷰(TDD·code-review).**
 - **프로젝트 인프라 = 10~13 e2e·배포·모니터링·롤백·회고.**
 - 외부 도구(superpowers/프로젝트)는 프로필 `handoffs.*`/존재 시 사용, 없으면 산출물에 "다음: X 필요"만 남김(하드 의존 X).
@@ -31,4 +33,5 @@
 - `defining-requirements` 끝 → DB 닿으면 `designing-data-model`, 아니면 6(작업분해+테스트리스트업).
 - `designing-data-model` 끝 → 코드 설계가 *무거우면* `designing-code`, *가벼우면 skip* → 6.
 - `designing-code` 끝 → 6.
+- 구현·테스트(7~8) 끝 → `auditing-production-risks`(8.5). 재화·외부연동·동시성·큐·마이그레이션 접촉 시 skip 금지, 가벼운 tier 비접촉이면 skip → 9.
 - 단계의 무게(비가역·blast radius)에 비례해 깊이 조절. 작은 변경은 1·6·7만 밟아도 됨.

@@ -7,7 +7,7 @@
     {
       "name": "persona-suite",
       "source": "./",
-      "description": "개발 라이프사이클(요구사항→설계→테스트리스트업) 도구 모음. defining-requirements·designing-data-model·designing-code(v1)·validating-test-lists. 작업분해/구현/리뷰는 superpowers로 핸드오프."
+      "description": "개발 라이프사이클(요구사항→설계→테스트리스트업→리스크감사) 도구 모음. defining-requirements·designing-data-model·designing-code(v1)·validating-test-lists·auditing-production-risks(v1). 작업분해/구현/리뷰는 superpowers로 핸드오프."
     }
   ]
 }
