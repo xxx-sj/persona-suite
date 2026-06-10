@@ -13,7 +13,7 @@
 | 6a | 작업 분해 | `handoffs.plan` (예: writing-plans) | superpowers |
 | 6b | 테스트 리스트업 (빠진/불필요/**엣지** 검증) | `validating-test-lists` | ✅ suite |
 | 7 | 구현 | test-driven-development | superpowers |
-| 8 | 테스트 진행 (단위·통합) | (TDD) | superpowers |
+| 8 | 테스트 진행 (단위·통합) | (TDD) · [claude-agents](https://github.com/xxx-sj/claude-agents) test-writer/reviewer | superpowers |
 | 8.5 | 프로덕션 리스크 감사 (독립 서브에이전트 판정표) | `auditing-production-risks` | ✅ suite (v1 — 미검증) |
 | 9 | PR·코드리뷰·CI | code-review | superpowers |
 | 10 | e2e (staging) | — | 프로젝트 |
