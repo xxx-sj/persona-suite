@@ -5,7 +5,7 @@ description: 요구사항·데이터모델이 정해진 피처의 모듈/코드 
 
 # designing-code
 
-> ⚠️ **v1 — genericize 원본 없이 맨땅 저술. 첫 *코드설계 무거운 피처*에서 dogfood로 검증·수정 예정.** (현재 미검증)
+> ⚠️ **v1 — genericize 원본 없이 맨땅 저술. light 경로(skip 권고·순서 경고)는 dogfood 검증됨, heavy 코어(새 모듈 설계 절차 1~7)는 미검증** — 첫 *코드설계 무거운 피처*에서 검증·수정 예정 (이력: DESIGN.md dogfood 로그).
 
 요구사항(+데이터모델) 문서를 입력으로, 모듈/코드 구조를 페르소나 핑퐁으로 설계한다.
 (suite: defining-requirements → designing-data-model → **designing-code** → 구현 계획)

@@ -9,7 +9,7 @@
 | 2 | 기능 정의 (밖에서 본 동작·예외) | `defining-requirements` ② | ✅ suite |
 | 3 | 기술 설계(고수준) (영향·API·NFR) | `defining-requirements` ③ | ✅ suite |
 | 4 | 상세 데이터 모델 (스키마·인덱스·마이그) | `designing-data-model` | ✅ suite |
-| 5 | 코드 설계 (모듈·구조) | `designing-code` | ✅ suite (v1·미검증) |
+| 5 | 코드 설계 (모듈·구조) | `designing-code` | ✅ suite (v1 — light 검증/heavy 미검증) |
 | 6a | 작업 분해 | `handoffs.plan` (예: writing-plans) | superpowers |
 | 6b | 테스트 리스트업 (빠진/불필요/**엣지** 검증) | `validating-test-lists` | ✅ suite |
 | 7 | 구현 | test-driven-development | superpowers |

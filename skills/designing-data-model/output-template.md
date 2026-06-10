@@ -1,6 +1,6 @@
 # 데이터 모델 설계 출력 양식
 
-`designing-data-model` 산출물. 위치 = 프로필 `conventions`(요구사항 문서 옆 또는 `doc_dir`). 해당 없으면 "해당 없음" 명시(빈칸 방치 금지).
+`designing-data-model` 산출물. 위치 = 프로필 `conventions`(요구사항 문서 옆 또는 `doc_dir`). 해당 없으면 "해당 없음" 명시(빈칸 방치 금지). 완성 깊이의 기준은 [`examples/designing-data-model-example.md`](../../examples/designing-data-model-example.md) 참고.
 
 ---
 
