@@ -1,0 +1,27 @@
+# 공개 repo 익명화 가드 — dogfood 로그 등에 프로젝트/회사 실명·사내 도메인 어휘가
+# 들어오는 것을 push/PR 시점에 차단한다.
+# denylist 패턴은 repo secret(MASKING_DENYLIST)에 둔다 — 워크플로우 파일에 직접 쓰면
+# 숨기려는 어휘 자체가 공개 파일에 노출되는 자기모순. 매치 시 파일명만 출력(내용 비노출).
+name: masking-guard
+
+on: [push, pull_request]
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 공개 금지 어휘 검사
+        env:
+          DENYLIST: ${{ secrets.MASKING_DENYLIST }}
+        run: |
+          if [ -z "$DENYLIST" ]; then
+            echo "::warning::MASKING_DENYLIST secret 미설정 — 검사 생략"
+            exit 0
+          fi
+          MATCHES=$(grep -rliE "$DENYLIST" --exclude-dir=.git . || true)
+          if [ -n "$MATCHES" ]; then
+            echo "::error::공개 금지 어휘 발견 — 아래 파일을 익명화 후 다시 push"
+            echo "$MATCHES"
+            exit 1
+          fi

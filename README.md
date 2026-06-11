@@ -39,7 +39,7 @@
 GitHub 등에 이 repo를 push 한 뒤:
 
 ```
-/plugin marketplace add <github-owner>/persona-suite
+/plugin marketplace add xxx-sj/persona-suite
 /plugin install persona-suite@persona-suite
 ```
 
@@ -49,8 +49,6 @@ GitHub 등에 이 repo를 push 한 뒤:
 /plugin marketplace add ~/Documents/workspace/projects/persona-suite
 /plugin install persona-suite@persona-suite
 ```
-
-> `<github-owner>` 는 본인 GitHub 계정으로 교체.
 
 ## 업데이트
 
