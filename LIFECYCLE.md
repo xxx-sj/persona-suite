@@ -101,3 +101,9 @@
 /persona-suite:audit-production-risks
 ```
 통과(또는 비접촉 skip + 사유 한 줄) 후 "PR 만들어줘".
+
+**clear 지도 (한눈 요약)**
+```
+진입(1~3) →clear→ 4 →clear→ 5 →clear→ [6a → 6b 같은 세션] →clear→ [7 → 8.5 → 9 같은 세션]
+```
+작은 변경은 진입·7만 밟아도 된다 (right-size — 위 "현재 → 다음 안내 규칙").
