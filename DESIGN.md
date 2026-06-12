@@ -31,7 +31,7 @@
 ## 3. #1 `defining-requirements` 구성
 
 - 페르소나 6종: `[PM]`①요구사항 · `[REV]`②기능정의(메인) · `[TECH]`③기술설계 · `[SEC]`횡단보안 · `[OPS]`운영 · `[QA]`검증.
-- 플로우 게이트 4종: right-size tier / 수정 시 AS-IS 코드 조사(일급 step) / 단방향+역류 / 종료 완성도 패스.
+- 플로우 게이트 5종: 스코프 슬라이싱(자기 완결 조각 분리 — tier 는 본체 기준) / right-size tier / 수정 시 AS-IS 코드 조사(일급 step) / 단방향+역류 / 종료 완성도 패스.
 - 내용 소스: 실무 기능개발 사이클 방법론(①②③ 구분·단방향·NFR표·Saga·expand-contract·right-size)을 제네릭화해 흡수 (런타임 파일 의존 ❌ — 원본이 어느 프로젝트에 있든 플러그인은 내용만 내장).
 - 상세는 `skills/defining-requirements/{SKILL.md, personas.md, output-template.md}`.
 
