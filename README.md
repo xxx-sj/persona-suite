@@ -18,7 +18,7 @@
 | `designing-data-model` | 상세 스키마/인덱스 설계 ([REV][DBA][DATA][SRE][SEC]) | ✅ |
 | `designing-code` | 모듈/코드 설계 ([ARCH][REV][SEC]) | ✅ v1 — light 검증 / heavy 미검증 |
 | `validating-test-lists` | 테스트 리스트업 (빠진/불필요/엣지 검증) | ✅ |
-| `auditing-production-risks` | 구현 후 프로덕션 리스크 감사 (독립 서브에이전트 판정표) | ✅ v1 — 미검증 (dogfood 대기) |
+| `auditing-production-risks` | 구현 후 프로덕션 리스크 감사 (독립 서브에이전트 판정표) | ✅ v1 — 단발 경로 4회 검증 / 재감사 루프 미검증 |
 
 설계 근거는 [`DESIGN.md`](./DESIGN.md) (검증 이력은 그 안 dogfood 로그). 전체 개발 라이프사이클 + 각 스킬 위치는 [`LIFECYCLE.md`](./LIFECYCLE.md). 페르소나 스킬 공통 원칙(단일 출처)은 [`PRINCIPLES.md`](./PRINCIPLES.md). 완성 산출물 예시는 [`examples/`](./examples/) (defining-requirements·designing-data-model — 같은 가공 피처의 연속 산출물).
 
