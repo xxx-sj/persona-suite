@@ -5,7 +5,7 @@
 
 | # | 단계 | 맡는 도구 | 구분 |
 |---|---|---|---|
-| 1 | 요구사항 정의 (왜·누구·성공·정책) | `defining-requirements` ① | ✅ suite |
+| 1 | 요구사항 정의 (왜·누구·성공·정책 + 형태/분해 게이트0) | `defining-requirements` ① | ✅ suite |
 | 2 | 기능 정의 (밖에서 본 동작·예외) | `defining-requirements` ② | ✅ suite |
 | 3 | 기술 설계(고수준) (영향·API·NFR) | `defining-requirements` ③ | ✅ suite |
 | 4 | 상세 데이터 모델 (스키마·인덱스·마이그) | `designing-data-model` | ✅ suite |
@@ -27,6 +27,7 @@
 - **superpowers = 6a 작업분해(writing-plans) · 7~9 구현/테스트/리뷰(TDD·code-review).**
 - **프로젝트 인프라 = 10~13 e2e·배포·모니터링·롤백·회고.**
 - 외부 도구(superpowers/프로젝트)는 프로필 `handoffs.*`/존재 시 사용, 없으면 산출물에 "다음: X 필요"만 남김(하드 의존 X).
+- 형태/분해(다중 서브시스템 판별 → 첫 본체 선택)는 stage-1 진입 게이트0에 fold (별도 단계 아님 — 같은 판단 tier·같은 세션). 시각 companion(목업·다이어그램)은 1~3 동안 `handoffs.visual`로 opt-in — superpowers brainstorming visual 참조(복제 ❌), 미설치면 텍스트.
 
 ## 현재 → 다음 안내 규칙
 각 스킬은 마칠 때 자기 단계의 *다음 행*을 안내하되 **right-size로 건너뛸 수 있다**:
