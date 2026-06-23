@@ -29,6 +29,21 @@
 - 외부 도구(superpowers/프로젝트)는 프로필 `handoffs.*`/존재 시 사용, 없으면 산출물에 "다음: X 필요"만 남김(하드 의존 X).
 - 형태/분해(다중 서브시스템 판별 → 첫 본체 선택)는 stage-1 진입 게이트0에 fold (별도 단계 아님 — 같은 판단 tier·같은 세션). 시각 companion(목업·다이어그램)은 1~3 동안 `handoffs.visual`로 opt-in — superpowers brainstorming visual 참조(복제 ❌), 미설치면 텍스트.
 
+## 7~9 실행 레이어 — 규율(TDD) vs 오케스트레이션(plan 실행)
+표 7행의 `test-driven-development` 는 *한 태스크 코드를 짜는 규율*(안쪽 루프: RED→GREEN→REFACTOR)이지 plan 전체를 굴리는 도구가 아니다. 다태스크 plan 을 굴리는 *오케스트레이션*(바깥 루프)은 별도 superpowers 스킬이다 — 둘은 택일이 아니라 **포개진다**.
+
+- **test-driven-development (안쪽 · 항상 켜짐)**: 단일 기능/버그픽스 한 건을 테스트 먼저로 구현. plan 의 *각 태스크 안*에서 돈다.
+- **subagent-driven-development (바깥 · 다태스크일 때)**: 6a plan 을 *같은 세션*에서 태스크별 fresh 서브에이전트로 디스패치 + 태스크마다 2단계 리뷰(spec→quality). 각 implementer 서브에이전트가 자기 태스크에서 위 TDD 를 따른다.
+- **executing-plans (바깥 · 대안)**: 같은 일을 *별도/병렬 세션* + 사람 체크포인트로. (세션 경계만 다름)
+
+**중첩**: 바깥이 TDD 를 *대체*하지 않는다 — 감싸고 그 안에서 TDD 가 돈다. 표 7행이 TDD 를 가리키는 건 정확하다(바닥 규율). 오케스트레이션은 그 위에 얹는 *선택* 레이어.
+
+**right-size 토글** (크기로 갈리는 건 '바깥을 얹느냐'뿐 — TDD 는 양쪽 다 켜짐):
+- 작은 단일 변경 → 메인에서 **TDD 직접**. 바깥 오케스트레이션은 과함.
+- 다태스크 plan → **subagent-driven-development(또는 executing-plans)로 감싸고** 각 태스크 안에서 TDD.
+
+바깥을 쓸 때도 plan 을 *서브에이전트 하나에 통째* 던지지 않는다 — 태스크별 서브에이전트 + 사이 게이트(요약·커밋·리뷰·에스컬레이션). 상세: §단계 전환 "→ 7 구현".
+
 ## 현재 → 다음 안내 규칙
 각 스킬은 마칠 때 자기 단계의 *다음 행*을 안내하되 **right-size로 건너뛸 수 있다**:
 - `defining-requirements` 끝 → DB 닿으면 `designing-data-model`, 아니면 6(작업분해+테스트리스트업).
