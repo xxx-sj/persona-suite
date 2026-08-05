@@ -21,7 +21,7 @@ description: 대략 정해진 피처의 요구사항을 6개 시니어 페르소
 1. `<repo>/.claude/persona-profile.md` 를 찾는다.
 2. **있으면** 로드해 페르소나 압박에 주입한다 (재질문 없음 — 단 `capacity` 의 `[확인: YYYY-MM]` 라벨이 6개월 지났으면 한 줄 재확인 후 라벨 갱신).
 3. **없으면 (새 프로젝트)** 만들고 시작한다. 프로필은 두 부분이고 *채우는 방식이 다르다*:
-   - **(a) 객관 사실 — upfront, auto 추론 + 빠른 확인**: stack(package.json) / output_path·doc_dir(CLAUDE.md) / handoffs(존재 확인) / capacity(메모리·CLAUDE.md, **모르면 반드시 질문** — right-size 기준). 검증 가능한 사실이라 추론 후 확인으로 충분.
+   - **(a) 객관 사실 — upfront, auto 추론 + 빠른 확인**: stack(package.json) / output_path·doc_dir(CLAUDE.md) / handoffs(존재 확인) / capacity(메모리·CLAUDE.md, **모르면 반드시 질문** — right-size 기준) / observability(알람·트래커·로깅 규약 — 코드에서 확인, 없으면 "없음"). 검증 가능한 사실이라 추론 후 확인으로 충분.
    - **(b) crosscutting — upfront 채우지 않는다 (lazy + 피드백 co-define)**: 판단·도출이라 auto-fill해 던지면 사용자가 *감사만* 하게 됨(스킬 철학 위반). 대신 **핑퐁 중 피처가 개념을 건드릴 때 그 자리서** [SEC]/[TECH]가 공유 원칙 2·3(본질 도출·right-size)으로 *도출 초안*을 제안 → 사용자 피드백 → 결정 → crosscutting에 `[선언]/[도출]/[관찰]/[추정]` 라벨로 누적. 프로필은 객관 사실로 시작해 피처를 돌수록 자란다.
    - **객관 사실만** `<repo>/.claude/persona-profile.md` 로 저장(프로젝트 지식 → git tracked) 후 진행. crosscutting은 빈 채로 시작해 누적.
 
@@ -31,8 +31,15 @@ project:      { name, stack }
 capacity:     # CPU/메모리/단일성/데이터량 — [TECH][SEC] 압박에 사용. 항목마다 [확인: YYYY-MM] 라벨 (6개월 지나면 재확인)
 conventions:  { output_path, doc_dir }   # 출력 위치
 handoffs:     { db_design, test_list, plan, visual }   # 존재하는 것만 (제안 전 존재 확인). visual=시각 companion(예: superpowers brainstorming) — UI/플로우 질문용, 없으면 텍스트
+observability:            # 객관 사실 — upfront (코드·설정에서 확인 가능). 없으면 "없음" 명시
+  알림 채널:   # 어디로 알람이 가나 + 무엇으로 보내나 (모듈/서비스명까지 — 추측 금지, 실측 라벨)
+  에러 트래커: #
+  메트릭/대시보드: #
+  로깅 규약:   # 어느 계층에서 남기나 · 레벨 기준 · 요청을 잇는 키(상관관계 id) · 마스킹 대상
 crosscutting: []  # upfront 비움. 피처가 개념 건드릴 때 [SEC]/[TECH]가 co-define 누적
 ```
+
+`observability` 는 **매 피처 다시 정할 사안이 아니라 프로젝트 전역 관례**라 프로필에 1회 고정하고 이후엔 참조만 한다 (피처마다 핑퐁으로 깎으면 세리머니). 고정해두면 두 곳이 살아난다 — 요구사항 §5 관측 수단이 이름으로 적히고, 8.5 감사가 "규약을 따르나"를 판정할 기준을 갖는다. **비어 있으면 세션이 추측으로 메운다** (실측 2026-07: 통지 채널을 다른 서비스로 지목 → §8 검수가 코드 실측으로 교정).
 
 프로필이 없어도 페르소나는 "이 프로젝트 용량 제약이 뭐야?"처럼 **물으면서** 동작한다 (가정 금지).
 
@@ -59,6 +66,7 @@ crosscutting: []  # upfront 비움. 피처가 개념 건드릴 때 [SEC]/[TECH]�
 5. [OPS] 운영 흐름 (등록/수정/취소/복구·admin UI·장애 수동개입)
 6. [QA]  AC (②의 관찰가능결과 → 검증가능 AC·엣지). 테스트 리스트 검증은 핸드오프(test_list 타깃)
 7. [REV] 종료 완성도 패스 — ①②③ 가로질러 "아직 안 정해진 게 뭐냐" 훑기
+7.5 (무거움 tier) 스케일 라운드 **1회 offer** — 공유 원칙 §3 학습 모드. 사용자가 넘기면 §8 스케일 경로 칸만 기록하고 진행. 받으면 no-pre-fill(먼저 묻고 나중에 보탬)로 후보 비교 → 문서엔 압축만
 8. 산출 → 프로필 output_path 의 요구사항 문서 (output-template.md 양식)
 9. 종료 독립 검수 (공유 원칙 §8) — 완성 문서를 독립 서브에이전트로 1회 → `handoffs.plan` 핸드오프
 ```
