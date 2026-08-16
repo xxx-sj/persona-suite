@@ -158,6 +158,11 @@ Chunk(태스크 그룹)별 PR 경계를 판정해 명시한다 — "이 묶음�
 ```
 /persona-suite:validate-test-lists <산출경로>/<피처>-plan.md 의 테스트 케이스 목록을 <산출경로>/<피처>.md 기준으로 검증해줘. 판정 결과는 plan에 반영.
 ```
+테스트 설계를 직접 연습하려면 **핑퐁(학습) 모드** — plan 의 테스트 섹션을 **열기 전에**:
+```
+/persona-suite:validate-test-lists <산출경로>/<피처>.md 기준으로 핑퐁으로. plan 목록은 공개 대조 때 합류.
+```
+(스킬이 inventory 를 비공개 선고정 후 되묻는다 — plan 테스트 목록을 먼저 읽으면 pre-fill 이라 학습이 죽는다. 상세: validating-test-lists §핑퐁 모드)
 
 **→ 7 구현** (6b 종료 · clear 후 새 세션)
 ```
