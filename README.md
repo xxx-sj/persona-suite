@@ -18,9 +18,21 @@
 | `designing-data-model` | 상세 스키마/인덱스 설계 ([REV][DBA][DATA][SRE][SEC]) | ✅ |
 | `designing-code` | 모듈/코드 설계 ([ARCH][REV][SEC]) | ✅ v1 — light 검증 / heavy 미검증 |
 | `validating-test-lists` | 테스트 리스트업 (빠진/불필요/엣지 검증) | ✅ |
-| `auditing-production-risks` | 구현 후 프로덕션 리스크 감사 (독립 서브에이전트 판정표) | ✅ v1 — 단발 경로 4회 검증 / 재감사 루프 미검증 |
+| `auditing-production-risks` | 구현 후 프로덕션 리스크 감사 (독립 서브에이전트 판정표) | ✅ v1 — 단발 경로 5회 검증 / 재감사 루프 미검증 |
 
 설계 근거는 [`DESIGN.md`](./DESIGN.md) (검증 이력은 그 안 dogfood 로그). 전체 개발 라이프사이클 + 각 스킬 위치는 [`LIFECYCLE.md`](./LIFECYCLE.md). 페르소나 스킬 공통 원칙(단일 출처)은 [`PRINCIPLES.md`](./PRINCIPLES.md). 완성 산출물 예시는 [`examples/`](./examples/) (defining-requirements·designing-data-model — 같은 가공 피처의 연속 산출물).
+
+## 동봉 검증자 에이전트 (agents/)
+
+suite 의 검증 3단계는 read-only 서브에이전트 **정의 파일로 동봉**된다 — `model`·`effort` 가 frontmatter 에 박혀 있어, 메인 세션 모델을 낮춰도 검증 강도가 조용히 따라 내려가지 않는다 (effort 배정 근거: [`LIFECYCLE.md`](./LIFECYCLE.md) §검증자 서브에이전트).
+
+| 에이전트 | 단계 |
+|---|---|
+| `design-doc-reviewer` | §8 종료 독립 검수 (설계 문서 1회 검수) |
+| `decision-challenger` | §10 결정 스팟 반박 (무거움 tier 핵심 결정) |
+| `production-risk-auditor` | 8.5 프로덕션 리스크 감사 |
+
+⚠️ 같은 이름의 에이전트를 `~/.claude/agents/` 나 프로젝트 `.claude/agents/` 에 두지 말 것 — 플러그인 에이전트는 우선순위가 최하위(Project > User > Plugin)라 그쪽이 이겨 모델 핀이 무력화된다. 판단 tier 의 모델 세대가 바뀌면 `agents/*.md` 의 `model:` 도 함께 갱신한다 (tier 추상화가 정의 파일까지는 닿지 않는다).
 
 ## 호출 — 자연어 자동 / 슬래시 커맨드(명시·결정적)
 
