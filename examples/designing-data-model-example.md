@@ -37,11 +37,18 @@
 - **contract**: 없음(필드 추가만).
 - rollback: 필드 drop (additive라 데이터 손실 없음). 코드도 `attempt ?? 1` 방어.
 
-## 6. 한계 / 트레이드오프 `[SRE]`
-- `CardEvaluation`: 무제한 재평가 → 카드당 (회차 × 20) 평가 누적(무한). **T0 소량이라 OK.** scale-trigger: 카드당 회차 수가 커지면(수십+) 오래된 회차 평가 아카이빙.
+## 6. 보안 `[SEC]`
+- **해당 없음** — 신규 필드에 PII 없음(회차 번호·점수·시각뿐). 재화 이력은 기존 pointHistory 체계 유지(보관·감사 정책 상속), `CardEvaluationAttempt` 가 감사 소스(§2)라 별도 감사 로그 불요.
+
+## 7. 한계 / 트레이드오프 `[SRE]`
 - `CardEvaluationAttempt`: 회차당 1 doc, 작음.
 - 인덱스 write: CardEvaluation insert 시 +2 인덱스 — 평가는 hot write 아니라 OK.
+- **스케일 경로 (무거움 tier)**: 무제한 재평가 → `CardEvaluation` 카드당 (회차 × 20) 무한 누적. **T0 소량이라 지금은 OK.**
+  - 트리거: 카드당 회차 수 수십+ 또는 `CardEvaluation` 회차 스코핑 인덱스가 working set 임계 근접 (capacity 역산).
+  - 깨지는 방식: 인덱스 메모리 압박 → top-N 조회(`getEvaluations`) 지연이 먼저 온다 (쓰기는 저빈도라 뒤).
+  - 진화: **오래된 회차 평가 아카이빙**(콜드 컬렉션 이동) — 데이터 이동 마이그 스크립트 필요. 코드 delta: `getEvaluations`·`hasUserEvaluated` 는 현재 회차만 보므로 무변경, CS 과거 회차 조회에만 아카이브 폴백 1개 추가.
+  - **지금 구현하지 않는다** — 예약 (인덱스 남발·조기 파티셔닝 금지).
 
-## 7. 핸드오프
+## 8. 핸드오프
 - 구현 계획 → `handoffs.plan` 으로 (위 🔧 `hasUserEvaluated` `_id` 버그 수정 포함)
 - 모듈/코드 설계 → 무거우면 `designing-code` (이 피처는 기존 모듈 수정 위주라 skip — right-size)
